@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      {% load staticfiles %}
+    <title>IIT BHU</title>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href={% static "css/materials.css" %} type="text/css" rel="stylesheet">
+    <link href={% static "css/style.css" %} type="text/css" rel="stylesheet">
+    <script>
+        var angle = 0;
+function galleryspin(sign) { 
+spinner = document.querySelector("#spinner");
+if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+}
+ </script>
+
+  </head>
+  <body>
+    <nav class="blue" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Home </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Notification</a></li>
+          <li><a href="https://drive.google.com/file/d/0B11jnltBT3TFYzRKbjJXYUcwM2ctQld1TkFvZ2FGZTBPaTRr/view?usp=sharing">Rooms</a></li>
+          <li><a href="https://drive.google.com/file/d/0B081mTQyGdy5VHVyRnVsMm5xWXMyS1RQSXFONlUzeXZUb29B/view?usp=sharing">Council</a></li>
+          <li><a href="#">Hostels</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
+      </div>
+    </nav>
+
+      <!-- Slideshow container -->
+    <div class="container">
+          <div class="row">
+
+            <div class="col s4 m3" style="padding:0;">
+              <div class="collection">
+              <a href="#!" class="collection-item" style = "font-size:24px; text-align:center">ARYABHATTA HOSTEL</a>
+              <a href="https://drive.google.com/file/d/1BBI1LlDa7MDdUBNVwIg-SktusiMB8kix/view?usp=sharing" class="collection-item drop-down" style = "text-align:left">Hostel Constitution</a>
+              <a href="https://drive.google.com/file/d/1lK0xM5z-TvJhbEK9exjc-Qb--XUnSjPD/view?usp=sharing" class="collection-item" style = "text-align:left">Students' Gymkhana Constitution</a>
+              <a href="https://drive.google.com/file/d/1mL03zdBFMtQwzES4tRRhdXG1lZVI_UFi/view?usp=sharing" class="collection-item" style = "text-align:left">Hostel Maintainance Policy</a>
+              <a href="https://drive.google.com/file/d/11v7vp54PRmDYR708BYvJcagKk_QzIRNH/view?usp=sharing" class="collection-item" style = "text-align:left">Mess Guidelines</a>
+              <a href="https://drive.google.com/file/d/1Ke_jv7gK1GWj7tDdvdtEFfPXzNyh2r0i/view?usp=sharing" class="collection-item" style = "text-align:left">Duties of HEC members</a>
+              <a href="#!" class="collection-item" style = "text-align:left">Canteen</a>
+              <a href="https://drive.google.com/file/d/1kP4wlHLg2cthGeteKpBu-d0Wlgwhuxnd/view?usp=sharing" class="collection-item" style = "text-align:left">Committee Conveners of Parliament</a>
+              <a href="#!" class="collection-item" style = "text-align:left">Laundry Service</a>
+              </div>
+            </div>
+
+
+              <div class="col s4 m9" style="padding:0";>
+                <div id="imageCarousel" class="carousel slide" data-interval="2000"
+                     data-ride="carousel" data-pause="hover" data-wrap="true" >
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#imageCarousel" data-slide-to="1"></li>
+                        <li data-target="#imageCarousel" data-slide-to="2"></li>
+                        
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src={% static "images/pic1.jpg" %} class="img-responsive">
+                            <div class="carousel-caption">
+                                <h3>image 1</h3>
+                                <p> Image Description</p>
+                            </div>
+                        </div>
+                        <div class="item ">
+                            <img src={% static "images/pic2.jpg" %} class="img-responsive">
+                            <div class="carousel-caption">
+                                <h3>Image 2</h3>
+                                <p>Image Description</p>
+                            </div>
+                        </div>
+                        <div class="item ">
+                            <img src={% static "images/pic3.jpg" %} class="img-responsive">
+                            <div class="carousel-caption">
+                                <h3>Image 3</h3>
+                                <p>Image Description</p>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <a href="#imageCarousel" class="carousel-control left" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a href="#imageCarousel" class="carousel-control right" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+      </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    
+
+      <div class="container">
+        <div class="row">
+        <div class="col s12 m7">
+
+        <div class="row">
+          <div class="col s12 center">
+            <h3><i class="mdi-content-send brown-text"></i></h3>
+            <h3>About Us</h3>
+            <p class="left-align light">Named after the great Indian astronomer and mathematician, Aryabhatta,
+              this is the largest hostel in the IIT BHU campus. It was inaugurated on 24th
+              July 2012.</br></br>
+              Aryabhatta hostel is divided into two parts, each consisting of two blocks.
+              Blocks A and B belong to Aryabhatta 1, which in total has 230 rooms
+              accommodating above 450 students while Aryabhatta 2 consists of block C
+              and D , which in total has 198 rooms accommodating over 350 students. 
+              This hostel comprises of a large common room, big sized rooms, three
+              canteens and four beautiful gardens. With a strength of over 800 students
+              this is one of the liveliest hostels in IIT BHU.</br></br>
+              Dr. Santosh Kumar is the Admin Warden of Aryabhatta 1 and Dr. Mohd.
+              Z.K. Yousufzai is the Admin Warden of Aryabhatta 2.</p>
+          </div>
+        </div>
+
+        </div>
+
+
+         <div class="col s4 m5">
+          <h4 style="text-align:center;s">Notifications</h4>
+          <div class="collection">
+                {% for files in all_files %}
+                    {% if files.is_new %}
+                        <a href="{{ files.file.url }}"><strong>{{ files.message }}</strong></a> <span class="label label-default">New</span><br>
+                    {% else %}
+                        <a href="{{ files.file.url }}">{{ files.message }}</a><br>
+                    {% endif %}
+                {% endfor %}
+          </div>
+        </div>
+
+        
+
+        </div>
+
+      </div>
+
+
+      <!--   Icon Section   -->
+      <div class="container">
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center" style="font-size : 26px;">Mess Details</h5>
+
+            <p class="light"><span style="font-size:18px">Mess 1 : </span><br>
+              Maharaj : __________<br>
+              <span style="font-size:18px">Mess 2 : </span><br>
+              Maharaj : __________<br>
+              <span style="font-size:18px">Mess 3 : </span><br>
+              Maharaj : __________<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center" style="font-size : 26px;">Rules and Regulations</h5>
+
+            <p class="light">The disciplinary committee shall consist of the Warden in-charge, Associate
+              Wardens, Hostel Secretary, one student nominated by the Warden in-charge
+              and one student nominated by the general body. The disciplinary committee
+              shall take action against the students who will violate the code of conduct of
+              the hostel.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center" style="font-size : 26px;">Allotment Scheme</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+    <section class="container">
+      <h4 align="center">Warden's Contacts:<h4>
+      <div class="row warden-contact">
+        
+        <div class="col sm12 m2.5">
+          <img src={% static "images/aa.jpg" %} class="contacts w-contacts" align="middle">
+          <figcaption align="left" ><font size="5">Dr. S.K. Singh</font></figcaption>
+        </div>
+        <div class="col sm12 m2.5">
+          <img src={% static "images/aa.jpg" %} class="contacts w-contacts" align="middle">
+          <figcaption align="left" ><font size="5">Dr. Rajesh Kumar Pandey</font></figcaption>
+        </div>
+        <div class="col sm12 m2.5">
+          <img src={% static "images/aa.jpg" %} class="contacts w-contacts" align="middle">
+          <figcaption align="left" ><font size="5">Dr. Pradip Kumar roy</font></figcaption>
+        </div>
+      </div> 
+    </section>
+
+    <section class="container warden-contact">
+      <h5 align="center">HEC Contacts:<h5>
+      <div class="row hec-contacts">
+        
+        <div class="col sm12 m2">
+          <img src={% static "images/aa.jpg" %} class="contacts w-contacts" >
+          <figcaption align="left" ><font size="5">Avinash Kumar</font></figcaption>
+        </div>
+        <div class="col sm12 m2">
+          <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
+          <figcaption align="left" ><font size="5">Akashdeep Garg</font></figcaption>
+        </div>
+        <div class="col sm12 m2">
+          <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
+          <figcaption align="left" ><font size="5">Mohammad Asaf Zakiy</font></figcaption>
+        </div>
+        <div class="col sm12 m2">
+          <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
+          <figcaption align="left" ><font size="5">Chander Shekher Pandey</font></figcaption>
+        </div>
+        <div class="col sm12 m2">
+          <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
+          <figcaption align="left" ><font size="5">Sparsh Goyal</font></figcaption>
+        </div>
+      </div> 
+    </section>
+
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">IIT (BHU)</h5>
+            <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          </div>
+          <div class="col l6 s12">
+            <h5 class="white-text" style="text-align:center;">Emergency Contacts</h5>
+            <p class="grey-text text-lighten-4">
+            chief proctor: 9450545650  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;
+            IIT BHU chief proctor : 8004925734<br>
+            BHU control room : +91 5422369134 &nbsp; &nbsp; &nbsp; &nbsp;
+            Ambulance contact no. : 0542-2309279, 2309308<br>
+            Sunderlal no. : 8541805443 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            Fire Brigade, Bhelupur : 0542-2452888<br>
+            </p>
+          </div>
+      </div>
+     
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../dist/js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+    </body>
+  </html>
