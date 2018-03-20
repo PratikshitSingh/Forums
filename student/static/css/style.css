@@ -18,6 +18,10 @@ nav ul a:hover, nav ul a:focus {
 a:hover, a:focus {
   text-decoration: none;
 }
+nav ul {
+  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+}
 
 p {
   line-height: 2rem;
