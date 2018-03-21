@@ -5,22 +5,31 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.views import generic
 from django.views.generic import View
-from .models import Notifications
+from .models import Notifications, Mess, Warden, Hostel_Committee, Hostel_name
 from .forms import Loginform
 from datetime import datetime
 
 
-
-def notify(request):
-    all_files = Notifications.objects.all().order_by('-time_stamp')
-    for files in all_files:
+def notify(request, pk):
+    all_notifications = Notifications.objects.filter(hostel=pk).order_by('-time_stamp')
+    all_mess = Mess.objects.filter(hostel=pk)
+    all_wardens = Warden.objects.filter(hostel=pk)
+    all_hec = Hostel_Committee.objects.filter(hostel=pk)
+    all_hostels = Hostel_name.objects.filter(id=pk)
+    for files in all_notifications:
        day = datetime.now().date() - files.time_stamp.date()
        d = day.days
        if(d <= 2):
            files.is_new = True
        else:
            files.is_new = False
-    return render(request, 'student/hostel.html', {'all_files': all_files})
+    return render(request, 'student/hostel.html',
+                  {'all_notitfications': all_notifications,
+                   'all_mess': all_mess,
+                   'all_hec': all_hec,
+                   'all_wardens': all_wardens,
+                   'all_hostels': all_hostels,
+                   })
 
 class AddfileView(CreateView):
     model = Notifications

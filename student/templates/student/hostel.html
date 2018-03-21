@@ -143,13 +143,13 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
 
 
          <div class="col s4 m5">
-          <h4 style="text-align:center;s">Notifications</h4>
+          <h4 style="text-align:center">Notifications</h4>
           <div class="collection">
-                {% for files in all_files %}
-                    {% if files.is_new %}
-                        <a href="{{ files.file.url }}"><strong>{{ files.message }}</strong></a> <span class="label label-default">New</span><br>
+                {% for notifications in all_notitfications %}
+                    {% if notifications.is_new %}
+                        <a href="{{ notifications.file.url }}"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br>
                     {% else %}
-                        <a href="{{ files.file.url }}">{{ files.message }}</a><br>
+                        <a href="{{ notifications.file.url }}">{{ notifications.message }}</a><br>
                     {% endif %}
                 {% endfor %}
           </div>
@@ -208,19 +208,12 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
     <section class="container">
       <h4 align="center">Warden's Contacts:<h4>
       <div class="row warden-contact">
-
+        {% for warden in all_wardens %}
         <div class="col sm12 m2.5">
-          <img src={% static "images/aa.jpg" %} class="contacts w-contacts" align="middle">
-          <figcaption align="left" ><font size="5">Dr. S.K. Singh</font></figcaption>
+          <img src="{{ warden.profile_photo.url }}" class="contacts w-contacts" align="middle">
+          <figcaption align="left" ><font size="5">{{ warden.warden_name }}</font></figcaption>
         </div>
-        <div class="col sm12 m2.5">
-          <img src={% static "images/aa.jpg" %} class="contacts w-contacts" align="middle">
-          <figcaption align="left" ><font size="5">Dr. Rajesh Kumar Pandey</font></figcaption>
-        </div>
-        <div class="col sm12 m2.5">
-          <img src={% static "images/aa.jpg" %} class="contacts w-contacts" align="middle">
-          <figcaption align="left" ><font size="5">Dr. Pradip Kumar roy</font></figcaption>
-        </div>
+        {% endfor %}
       </div>
     </section>
 
