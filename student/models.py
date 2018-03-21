@@ -18,7 +18,7 @@ class Notifications(models.Model):
     file = models.FileField()
     message = models.CharField(max_length=500)
     is_new = models.BooleanField(default=False)
-    time_stamp = models.DateTimeField(default=datetime.now().date())
+    time_stamp = models.DateTimeField(default=datetime.now())
 
     def get_absolute_url(self):
         return reverse('student:notify')
