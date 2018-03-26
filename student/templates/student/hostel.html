@@ -124,18 +124,11 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
           <div class="col s12 center">
             <h3><i class="mdi-content-send brown-text"></i></h3>
             <h3>About Us</h3>
-            <p class="left-align light">Named after the great Indian astronomer and mathematician, Aryabhatta,
-              this is the largest hostel in the IIT BHU campus. It was inaugurated on 24th
-              July 2012.</br></br>
-              Aryabhatta hostel is divided into two parts, each consisting of two blocks.
-              Blocks A and B belong to Aryabhatta 1, which in total has 230 rooms
-              accommodating above 450 students while Aryabhatta 2 consists of block C
-              and D , which in total has 198 rooms accommodating over 350 students. 
-              This hostel comprises of a large common room, big sized rooms, three
-              canteens and four beautiful gardens. With a strength of over 800 students
-              this is one of the liveliest hostels in IIT BHU.</br></br>
-              Dr. Santosh Kumar is the Admin Warden of Aryabhatta 1 and Dr. Mohd.
-              Z.K. Yousufzai is the Admin Warden of Aryabhatta 2.</p>
+                {% for para in all_about %}
+                    <p class="left-align light">{{ para.para_1 }}<br><br>
+                    {{ para.para_2 }}
+                    </p>
+                {% endfor %}
           </div>
         </div>
 
@@ -146,10 +139,19 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
           <h4 style="text-align:center">Notifications</h4>
           <div class="collection">
                 {% for notifications in all_notitfications %}
-                    {% if notifications.is_new %}
-                        <a href="{{ notifications.file.url }}"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br>
-                    {% else %}
-                        <a href="{{ notifications.file.url }}">{{ notifications.message }}</a><br>
+                    {% if notifications.file %}
+                        {% if notifications.is_new %}
+                            <a href="{{ notifications.file.url }}"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br>
+                        {% else %}
+                            <a href="{{ notifications.file.url }}">{{ notifications.message }}</a><br>
+                        {% endif %}
+                    {% endif %}
+                    {% if notifications.link %}
+                        {% if notifications.is_new %}
+                            <a href="{{ notifications.link }}" target="_blank"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br>
+                        {% else %}
+                            <a href="{{ notifications.link }}" target="_blank">{{ notifications.message }}</a><br>
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
           </div>
@@ -169,7 +171,6 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
             <h5 class="center" style="font-size : 26px;">Mess Details</h5>
-
             <p class="light"><span style="font-size:18px">Mess 1 : </span><br>
               Maharaj : __________<br>
               <span style="font-size:18px">Mess 2 : </span><br>

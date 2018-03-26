@@ -40,7 +40,8 @@ class Hostel_Committee(models.Model):
 
 class Notifications(models.Model):
     hostel = models.ForeignKey(Hostel_name, on_delete=models.CASCADE, null=True)
-    file = models.FileField()
+    link = models.CharField(max_length=2000, null=True, blank=True)
+    file = models.FileField(null=True, blank=True)
     message = models.CharField(max_length=1000)
     is_new = models.BooleanField(default=False)
     time_stamp = models.DateTimeField(default=datetime.now())
@@ -50,3 +51,27 @@ class Notifications(models.Model):
 
     def __str__(self):
         return self.message
+
+class About_us(models.Model):
+    hostel = models.ForeignKey(Hostel_name, on_delete=models.CASCADE, null=True)
+    para_1 = models.CharField(max_length=1000)
+    para_2 = models.CharField(max_length=2000)
+
+    def __str__(self):
+        return self.hostel.name + " - About us"
+
+class Allotment_scheme(models.Model):
+    hostel = models.ForeignKey(Hostel_name, on_delete=models.CASCADE, null=True)
+    scheme = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.hostel.name + " - Scheme"
+
+class Hostel_images(models.Model):
+    hostel = models.ForeignKey(Hostel_name, on_delete=models.CASCADE, null=True)
+    image_1 = models.ImageField(upload_to='media', default='default_dp.png')
+    image_2 = models.ImageField(upload_to='media', default='default_dp.png')
+    image_3 = models.ImageField(upload_to='media', default='default_dp.png')
+
+    def __str__(self):
+        return self.hostel.name + " - images"
