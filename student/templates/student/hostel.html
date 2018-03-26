@@ -30,7 +30,7 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
         <img src={% static "images/iitbhu-logo.png" %} height="50">
         <!-- <a id="logo-container" href="#" class="brand-logo">IIT (BHU) Varanasi</a> -->
         <ul class="right hide-on-med-and-down">
-          <li><a href="#">Notification</a></li>
+          <li><a href="#notification">Notification</a></li>
           <li><a href="https://drive.google.com/file/d/0B11jnltBT3TFYzRKbjJXYUcwM2ctQld1TkFvZ2FGZTBPaTRr/view?usp=sharing">Rooms</a></li>
           <li><a href="https://drive.google.com/file/d/0B081mTQyGdy5VHVyRnVsMm5xWXMyS1RQSXFONlUzeXZUb29B/view?usp=sharing">Council</a></li>
           <li><a href="#">Hostels</a></li>
@@ -126,14 +126,14 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
             <h3>About Us</h3>
             <p class="left-align light">Named after the great Indian astronomer and mathematician, Aryabhatta,
               this is the largest hostel in the IIT BHU campus. It was inaugurated on 24th
-              July 2012.</br></br>
+              July 2012.</br>
               Aryabhatta hostel is divided into two parts, each consisting of two blocks.
               Blocks A and B belong to Aryabhatta 1, which in total has 230 rooms
               accommodating above 450 students while Aryabhatta 2 consists of block C
               and D , which in total has 198 rooms accommodating over 350 students. 
               This hostel comprises of a large common room, big sized rooms, three
               canteens and four beautiful gardens. With a strength of over 800 students
-              this is one of the liveliest hostels in IIT BHU.</br></br>
+              this is one of the liveliest hostels in IIT BHU.</br>
               Dr. Santosh Kumar is the Admin Warden of Aryabhatta 1 and Dr. Mohd.
               Z.K. Yousufzai is the Admin Warden of Aryabhatta 2.</p>
           </div>
@@ -142,14 +142,14 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
         </div>
 
 
-         <div class="col s4 m5">
+         <div  id="notification" class="col s4 m5">
           <h4 style="text-align:center">Notifications</h4>
           <div class="collection">
                 {% for notifications in all_notitfications %}
                     {% if notifications.is_new %}
-                        <a href="{{ notifications.file.url }}"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br>
+              <p class="collection-item"> <a  href="{{ notifications.file.url }}"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br></p>
                     {% else %}
-                        <a href="{{ notifications.file.url }}">{{ notifications.message }}</a><br>
+              <p class="collection-item"><a href="{{ notifications.file.url }}">{{ notifications.message }}</a><br></p>
                     {% endif %}
                 {% endfor %}
           </div>
@@ -169,14 +169,17 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
             <h5 class="center" style="font-size : 26px;">Mess Details</h5>
-
+            <div class="mess-info">
             <p class="light"><span style="font-size:18px">Mess 1 : </span><br>
               Maharaj : __________<br>
               <span style="font-size:18px">Mess 2 : </span><br>
               Maharaj : __________<br>
               <span style="font-size:18px">Mess 3 : </span><br>
               Maharaj : __________<br>
+                <span style="font-size:18px">Mess 4 : </span><br>
+              Maharaj : __________<br>
             </p>
+            </div>
           </div>
         </div>
 
@@ -223,23 +226,23 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
 
         <div class="col sm12 m2">
           <img src={% static "images/aa.jpg" %} class="contacts w-contacts" >
-          <figcaption align="left" ><font size="5">Avinash Kumar</font></figcaption>
+          <figcaption align="center" ><font size="5">Avinash Kumar</font></figcaption>
         </div>
         <div class="col sm12 m2">
           <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
-          <figcaption align="left" ><font size="5">Akashdeep Garg</font></figcaption>
+          <figcaption align="center" ><font size="5">Akashdeep Garg</font></figcaption>
         </div>
         <div class="col sm12 m2">
           <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
-          <figcaption align="left" ><font size="5">Mohammad Asaf Zakiy</font></figcaption>
+          <figcaption align="center" ><font size="5">Mohammad Asaf Zakiy</font></figcaption>
         </div>
         <div class="col sm12 m2">
           <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
-          <figcaption align="left" ><font size="5">Chander Shekher Pandey</font></figcaption>
+          <figcaption align="center" ><font size="5">Chander Shekher Pandey</font></figcaption>
         </div>
         <div class="col sm12 m2">
           <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
-          <figcaption align="left" ><font size="5">Sparsh Goyal</font></figcaption>
+          <figcaption align="center" ><font size="5">Sparsh Goyal</font></figcaption>
         </div>
       </div>
     </section>

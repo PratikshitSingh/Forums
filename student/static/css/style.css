@@ -129,3 +129,17 @@ figcaption.figc{
   margin: 0 auto;
   display: table;
 }
+
+#notification{
+    float:left;
+    width:505px;
+    overflow-y: auto;
+    height: 400px;
+}
+
+.mess-info{
+    float:left;
+    width:300px;
+    overflow-y: auto;
+    height: 180px;
+}
