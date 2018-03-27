@@ -49,7 +49,7 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
 
             <div class="col s4 m3" style="padding:0;">
               <div class="collection">
-              <a href="#!" class="collection-item" style = "font-size:24px; text-align:center">ARYABHATTA HOSTEL</a>
+              <a href="#!" class="collection-item" style = "font-size:24px; text-align:center">{{ all_hostels.name }}</a>
               <a href="https://drive.google.com/file/d/1BBI1LlDa7MDdUBNVwIg-SktusiMB8kix/view?usp=sharing" class="collection-item drop-down" style = "text-align:left">Hostel Constitution</a>
               <a href="https://drive.google.com/file/d/1lK0xM5z-TvJhbEK9exjc-Qb--XUnSjPD/view?usp=sharing" class="collection-item" style = "text-align:left">Students' Gymkhana Constitution</a>
               <a href="https://drive.google.com/file/d/1mL03zdBFMtQwzES4tRRhdXG1lZVI_UFi/view?usp=sharing" class="collection-item" style = "text-align:left">Hostel Maintainance Policy</a>
@@ -74,28 +74,29 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
                     </ol>
 
                     <div class="carousel-inner">
+                        {% for images in all_images %}
                         <div class="item active">
-                            <img src={% static "images/pic1.jpg" %} class="img-responsive">
+                            <img src="{{ images.image_1.url }}" class="img-responsive">
                             <div class="carousel-caption">
                                 <h3>image 1</h3>
                                 <p> Image Description</p>
                             </div>
                         </div>
                         <div class="item ">
-                            <img src={% static "images/pic2.jpg" %} class="img-responsive">
+                            <img src="{{ images.image_2.url }}" class="img-responsive">
                             <div class="carousel-caption">
                                 <h3>Image 2</h3>
                                 <p>Image Description</p>
                             </div>
                         </div>
                         <div class="item ">
-                            <img src={% static "images/pic3.jpg" %} class="img-responsive">
+                            <img src="{{ images.image_3.url }}" class="img-responsive">
                             <div class="carousel-caption">
                                 <h3>Image 3</h3>
                                 <p>Image Description</p>
                             </div>
                         </div>
-
+                        {% endfor %}
                     </div>
 
                     <a href="#imageCarousel" class="carousel-control left" data-slide="prev">
@@ -123,7 +124,6 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
           <div class="col s12 center">
             <h3><i class="mdi-content-send brown-text"></i></h3>
             <h3>About Us</h3>
-
                 {% for para in all_about %}
                     <p class="left-align light">{{ para.para_1 }}<br><br>
                     {{ para.para_2 }}
@@ -143,16 +143,16 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
 
                     {% if notifications.file %}
                         {% if notifications.is_new %}
-                            <a href="{{ notifications.file.url }}"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br>
+                            <p class="collection-item"><a href="{{ notifications.file.url }}" target="_blank"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br></p>
                         {% else %}
-                            <a href="{{ notifications.file.url }}">{{ notifications.message }}</a><br>
+                            <p class="collection-item"><a href="{{ notifications.file.url }}" target="_blank">{{ notifications.message }}</a><br></p>
                         {% endif %}
                     {% endif %}
                     {% if notifications.link %}
                         {% if notifications.is_new %}
-                            <a href="{{ notifications.link }}" target="_blank"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br>
+                            <p class="collection-item"><a href="{{ notifications.link }}" target="_blank"><strong>{{ notifications.message }}</strong></a> <span class="label label-default">New</span><br></p>
                         {% else %}
-                            <a href="{{ notifications.link }}" target="_blank">{{ notifications.message }}</a><br>
+                            <p class="collection-item"><a href="{{ notifications.link }}" target="_blank">{{ notifications.message }}</a><br></p>
                         {% endif %}
                     {% endif %}
                 {% endfor %}
@@ -206,8 +206,9 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
             <h5 class="center" style="font-size : 26px;">Allotment Scheme</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+              {% for schemes in all_scheme %}
+            <p class="light">{{ schemes.scheme }}</p>
+              {% endfor %}
           </div>
         </div>
       </div>
@@ -229,27 +230,12 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
     <section class="container warden-contact">
       <h5 align="center">HEC Contacts:<h5>
       <div class="row hec-contacts">
-
+        {% for members in all_hec %}
         <div class="col sm12 m2">
-          <img src={% static "images/aa.jpg" %} class="contacts w-contacts" >
-          <figcaption align="center" ><font size="5">Avinash Kumar</font></figcaption>
+          <img src="{{ members.profile_image.url }}" class="contacts w-contacts" >
+          <figcaption align="center" ><font size="5">{{ members.member_name }}</font></figcaption>
         </div>
-        <div class="col sm12 m2">
-          <img src={% static "images/aa.jpg" %} class="contacts w-contacts" >
-          <figcaption align="center" ><font size="5">Akashdeep Garg</font></figcaption>
-        </div>
-        <div class="col sm12 m2">
-          <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
-          <figcaption align="center" ><font size="5">Mohammad Asaf Zakiy</font></figcaption>
-        </div>
-        <div class="col sm12 m2">
-          <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
-          <figcaption align="center" ><font size="5">Chander Shekher Pandey</font></figcaption>
-        </div>
-        <div class="col sm12 m2">
-          <img src={% static "images/aa.jpg" %} class="contacts w-contacts">
-          <figcaption align="center" ><font size="5">Sparsh Goyal</font></figcaption>
-        </div>
+        {% endfor %}
       </div>
     </section>
 

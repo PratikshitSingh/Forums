@@ -5,17 +5,16 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.views import generic
 from django.views.generic import View
-from .models import Notifications, Mess, Warden, Hostel_Committee, Hostel_name, About_us, Allotment_scheme, Hostel_images
+from .models import Notifications, Warden, Hostel_Committee, Hostel_name, About_us, Allotment_scheme, Hostel_images
 from .forms import Loginform
 from datetime import datetime
 
 
 def notify(request, pk):
     all_notifications = Notifications.objects.filter(hostel=pk).order_by('-time_stamp')
-    all_mess = Mess.objects.filter(hostel=pk)
     all_wardens = Warden.objects.filter(hostel=pk)
     all_hec = Hostel_Committee.objects.filter(hostel=pk)
-    all_hostels = Hostel_name.objects.filter(id=pk)
+    all_hostels = Hostel_name.objects.get(id=pk)
     all_images = Hostel_images.objects.filter(id=pk)
     all_about = About_us.objects.filter(id=pk)
     all_scheme = Allotment_scheme.objects.filter(id=pk)
@@ -28,7 +27,6 @@ def notify(request, pk):
            files.is_new = False
     return render(request, 'student/hostel.html',
                   {'all_notitfications': all_notifications,
-                   'all_mess': all_mess,
                    'all_hec': all_hec,
                    'all_wardens': all_wardens,
                    'all_hostels': all_hostels,

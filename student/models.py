@@ -12,14 +12,6 @@ class Hostel_name(models.Model):
     def __str__(self):
         return self.name
 
-class Mess(models.Model):
-    hostel = models.ForeignKey(Hostel_name, on_delete=models.CASCADE)
-    mess_number = models.IntegerField()
-    mess_maharaja = models.CharField(max_length=300)
-
-    def __str__(self):
-        return 'Mess no. - ' + str(self.mess_number) + ' of ' + self.hostel.name
-
 class Warden(models.Model):
     hostel = models.ForeignKey(Hostel_name, on_delete=models.CASCADE)
     warden_name = models.CharField(max_length=500)
