@@ -9,7 +9,7 @@
 /* BODY */
 body {
   background-color: #FCFCFC;
-  font: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Image carousel */
@@ -34,7 +34,7 @@ body {
 }
 
 .about-us p {
-
+  font-family: 'Roboto', sans-serif;
 }
 
 .collection a.collection-item {
@@ -179,8 +179,8 @@ figcaption.figc{
 }
 
 .mess-info{
-    float:left;
-    width:300px;
-    overflow-y: auto;
-    height: 180px;
+  width: 300px;
+  overflow-y: auto;
+  height: 180px;
+  margin: 0 auto;
 }
