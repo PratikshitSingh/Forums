@@ -33,8 +33,18 @@ body {
   text-transform: uppercase;
 }
 
-.notifications-hostel h4 {
+.about-us p {
 
+}
+
+.collection a.collection-item {
+  color: rgba(0,0,0,0.7);
+}
+
+.notifications-hostel h4 {
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
 }
 
 nav ul a,
