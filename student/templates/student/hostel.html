@@ -47,8 +47,8 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
     <div class="container">
           <div class="row">
 
-            <div class="col s4 m3" style="padding:0;">
-              <div class="collection">
+            <div class="col s4 m3" style="padding:5px;">
+              <div class="collection hostel-collection">
               <a href="#!" class="collection-item" style = "font-size:24px; text-align:center">{{ all_hostels.name }}</a>
               <a href="https://drive.google.com/file/d/1BBI1LlDa7MDdUBNVwIg-SktusiMB8kix/view?usp=sharing" class="collection-item drop-down" style = "text-align:left">Hostel Constitution</a>
               <a href="https://drive.google.com/file/d/1lK0xM5z-TvJhbEK9exjc-Qb--XUnSjPD/view?usp=sharing" class="collection-item" style = "text-align:left">Students' Gymkhana Constitution</a>
@@ -110,6 +110,7 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
             </div>
         </div>
       </div>
+      <hr>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
     </script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -118,12 +119,13 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
 
       <div class="container">
         <div class="row">
-        <div class="col s12 m7">
+        <div class="col s12 m7 about-us">
 
         <div class="row">
           <div class="col s12 center">
             <h3><i class="mdi-content-send brown-text"></i></h3>
-            <h3>About Us</h3>
+            <h4>ABOUT US</h4>
+            <hr>
                 {% for para in all_about %}
                     <p class="left-align light">{{ para.para_1 }}<br><br>
                     {{ para.para_2 }}
@@ -136,7 +138,7 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
         </div>
 
 
-         <div  id="notification" class="col s4 m5">
+         <div  id="notification" class="col s4 m5 notifications-hostel">
           <h4 style="text-align:center">Notifications</h4>
           <div class="collection">
                 {% for notifications in all_notitfications %}
@@ -164,6 +166,7 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
         </div>
 
       </div>
+      <hr>
 
 
       <!--   Icon Section   -->

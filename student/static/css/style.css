@@ -6,6 +6,37 @@
  * Made By MaterializeCSS.com
  */
 
+/* BODY */
+body {
+  background-color: #FCFCFC;
+  font: 'Roboto', sans-serif;
+}
+
+/* Image carousel */
+.carousel {
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.hostel-collection {
+  border-radius: 5px;
+}
+
+.about-us {
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.about-us h4 {
+  letter-spacing: 2px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.notifications-hostel h4 {
+
+}
+
 nav ul a,
 nav .brand-logo {
   color: #fff;
