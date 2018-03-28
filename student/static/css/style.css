@@ -184,3 +184,15 @@ figcaption.figc{
   height: 180px;
   margin: 0 auto;
 }
+.footer-line {
+  padding-bottom: 1%;
+    text-align: center;
+}
+.footer-first-tab img {
+  margin: 0 auto;
+    display: table;
+}
+
+.footer-first-tab p {
+  text-align: center;
+}
