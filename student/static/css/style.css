@@ -147,6 +147,21 @@ section h4 {
     font-weight: 300;
 }
 
+.custom_hr {
+  margin-top: 0;
+  width: 50%;
+}
+
+.icon-block h5 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 26px;
+}
+
+.brown-text {
+  color: #FE586B !important;
+}
+
 .container{
   width: 90%;
 }
