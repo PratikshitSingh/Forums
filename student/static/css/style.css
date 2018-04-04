@@ -141,7 +141,10 @@ section{
 
 
 section h4 {
-  text-align: center;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 .container{
