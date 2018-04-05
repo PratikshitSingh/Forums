@@ -17,6 +17,8 @@ class Warden(models.Model):
     warden_name = models.CharField(max_length=500)
     contact_number = models.CharField(max_length=10)
     profile_photo = models.ImageField(upload_to='media', default='default_dp.png')
+    warden_position = models.CharField(max_length=100, null=True)
+    warden_email_id = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return self.warden_name + ' - warden of ' + self.hostel.name
@@ -24,6 +26,8 @@ class Warden(models.Model):
 class Hostel_Committee(models.Model):
     hostel = models.ForeignKey(Hostel_name, on_delete=models.CASCADE)
     member_name = models.CharField(max_length=300)
+    member_post = models.CharField(max_length=100, null=True)
+    member_email_id = models.CharField(max_length=100, null=True)
     phone_number = models.CharField(max_length=10)
     profile_image = models.ImageField(upload_to='media', default='default_dp.png')
 

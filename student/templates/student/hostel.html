@@ -229,14 +229,14 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
         <div class="inner" style="text-align: center">
           <img src="{{ warden.profile_photo.url }}" class="contacts w-contacts" align="middle">
           <figcaption align="center" ><font size="4">{{ warden.warden_name }}</font></figcaption>
-          <figcaption align="center" ><font size="3">Admin Warden</font></figcaption>
+          <figcaption align="center" ><font size="3">{{ warden.warden_position }}</font></figcaption>
           <figcaption align="center" ><span class="col-md-12 section3" style="color:#7f7f7f;">
               <i class="fa fa-phone" style="color:#7f7f7f;"></i>
-              8726198956
+              {{ warden.contact_number }}
           </span></figcaption>
           <figcaption align="center" ><span class="col-md-12 section3 inline" style="color:#7f7f7f;">
             <i class="fa fa-envelope" aria-hidden="true"></i>
-              abhinavkr.singh.cse15@iitbhu.ac.in
+              {{ warden.warden_email_id }}
           </span></figcaption>
         </div>
         {% endfor %}
