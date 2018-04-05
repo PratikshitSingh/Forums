@@ -174,19 +174,25 @@ section h4 {
 .container .warden-contact{
   height: auto;
   margin: 0 auto;
-  display: table;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
 
 }
+
+.container .hec-contact{
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
 img.contacts{
   padding-right: 0px;
 }
 figcaption.figc{
   text-align: left;
-}
-
-.container .hec-contacts {
-  margin: 0 auto;
-  display: table;
 }
 
 #notification{
