@@ -227,7 +227,7 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
         {% for warden in all_wardens %}
         <div class="inner">
           <img src="{{ warden.profile_photo.url }}" class="contacts w-contacts" align="middle">
-          <figcaption align="left" ><font size="5">{{ warden.warden_name }}</font></figcaption>
+          <figcaption align="center" ><font size="3">{{ warden.warden_name }}</font></figcaption>
         </div>
         {% endfor %}
       </div>
@@ -241,7 +241,7 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
         {% for members in all_hec %}
         <div class="inner">
           <img src="{{ members.profile_image.url }}" class="contacts w-contacts" align="middle">
-          <figcaption align="center" ><font size="5">{{ members.member_name }}</font></figcaption>
+          <figcaption align="center" ><font size="3">{{ members.member_name }}</font></figcaption>
         </div>
         {% endfor %}
       </div>
