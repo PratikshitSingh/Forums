@@ -191,7 +191,7 @@ section h4 {
 img.contacts{
   padding-right: 0px;
   height: 150px;
-  border-radius: 54px;
+  border-radius: 50%;
 }
 figcaption.figc{
   text-align: left;
