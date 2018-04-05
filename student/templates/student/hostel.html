@@ -252,14 +252,14 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
         <div class="inner" style="text-align: center">
           <img src="{{ members.profile_image.url }}" class="contacts w-contacts" align="middle">
           <figcaption align="center" ><font size="4">{{ members.member_name }}</font></figcaption>
-          <figcaption align="center" ><font size="3">Hostel Sectretary</font></figcaption>
+          <figcaption align="center" ><font size="3">{{ members.member_post }}</font></figcaption>
           <figcaption align="center" ><span class="col-md-12 section3" style="color:#7f7f7f;">
               <i class="fa fa-phone" style="color:#7f7f7f;"></i>
-              9999999999
+              {{ members.phone_number }}
           </span></figcaption>
           <figcaption align="center" ><span class="col-md-12 section3 inline" style="color:#7f7f7f;">
             <i class="fa fa-envelope" aria-hidden="true"></i>
-              abcd16@iitbhu.ac.in
+              {{ members.member_email_id }}
           </span></figcaption>
         </div>
         {% endfor %}
