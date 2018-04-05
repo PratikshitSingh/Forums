@@ -189,6 +189,7 @@ section h4 {
 }
 
 img.contacts{
+  img-align: center;
   padding-right: 0px;
   height: 150px;
   border-radius: 50%;
