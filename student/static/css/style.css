@@ -183,6 +183,7 @@ section h4 {
 .container .hec-contact{
   height: auto;
   margin: 0 auto;
+  padding-bottom: 10px;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
