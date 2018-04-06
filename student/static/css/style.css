@@ -12,11 +12,32 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.container{
+  width: 90%;
+}
+
 /* Image carousel */
 .carousel {
     border: 1px solid;
     border-radius: 5px;
+    margin-top: 0.5rem;
+    height: 388px;
 }
+
+.button-collapse {
+  color: #00fceb;
+}
+
+.carousel-slide{
+  width: auto;
+  height: auto;
+}
+
+.carousel-inner{
+  width: auto;
+  height: auto;
+}
+
 
 .hostel-collection {
   border-radius: 5px;
@@ -66,20 +87,6 @@ nav ul {
 
 p {
   line-height: 2rem;
-}
-
-.button-collapse {
-  color: #00fceb;
-}
-
-.carousel-slide{
-  width: auto;
-  height: 400px;
-}
-
-.carousel-inner{
-  width: auto;
-  height: 400px;
 }
 
 
@@ -160,14 +167,6 @@ section h4 {
 
 .brown-text {
   color: #FE586B !important;
-}
-
-.container{
-  width: 90%;
-}
-
-.carousel {
-  margin-top: 0.5rem;
 }
 
 /* Contacts*/
